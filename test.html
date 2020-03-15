@@ -27,10 +27,9 @@ function start() {
   all = dd_target(get_el("all"));
   selected = dd_target(get_el("selected"));
 
-  for (var i=1; i <= 6; ++i)
+  for (var a in data)
   {
-    const el = mk_el("c"+i);
-    el.pos = i;
+    const el = mk_el(a);
     //mk_chart(el).render();
   }
 

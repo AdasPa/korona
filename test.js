@@ -1,11 +1,35 @@
+var data = {
+ TRK: [], 
+ VISTAL: [],
+ MFO: [],
+ MIRBUD: [],
+ MOSTALPLC: [],
+ MOSTALWAR: [],
+ POLIMEXMS: [],
+ ATERM: [],
+ DECORA: [],
+ AZOTY: [],
+ CIECH: [],
+ VRG: [],
+ LPP: [],
+ SOLAR: [],
+ WITTCHEN: [],
+ SANOK: [],
+ INTERCARS: [],
+ AGORA: []  
+}
+
+
 var all;
 var selected;
+var cc = {};
 
 function mk_el(id) {
   const el = dd_source(mk("div", "chart"));
   el.id = id;
   el.innerText = id;
   all.appendChild(el);
+  cc[id] = el;
   return el;
 }
 
@@ -33,9 +57,9 @@ const dd = {
     if ("" == id)
       return;
 
-    const where = ev.pos ? get_el(ev.pos) : null;
+    const where = ev.pos ? cc[ev.pos] : null;
 
-    tgt.insertBefore(get_el(id), where);
+    tgt.insertBefore(cc[id], where);
   }
 
 }
@@ -64,7 +88,7 @@ function mk_chart(el) {
 const chart_options = {
   series: [{
     name: 'test',
-    data: data
+    data: data0
   }],
   chart: {
     type: 'candlestick',
