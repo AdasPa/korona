@@ -1,0 +1,80 @@
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+  <link rel="stylesheet" href="jslib/ui.css"></link>
+  <link rel="stylesheet" href="test.css"></link>
+
+<script>
+  var module = {
+    exports: {}
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="jslib/ui.js"></script>
+<script src="data.js"></script>
+<script src="test.js"></script>
+
+<script>
+
+
+var chart;
+
+function start() {
+  all = dd_target(get_el("all"));
+  selected = dd_target(get_el("selected"));
+
+  for (var i=1; i <= 6; ++i)
+  {
+    const el = mk_el("c"+i);
+    el.pos = i;
+    //mk_chart(el).render();
+  }
+
+//  chart = mk_chart(get_el("chart"));
+//  chart.render();
+}
+
+function stop() {
+}
+
+</script>
+
+<style>
+
+* {
+ box-sizing: border-box;
+}
+
+body { background: grey; }
+
+div.spacer {
+  width: 0.6ex;
+  height: 0.6ex;
+}
+
+#bbox {
+  flex: 0 0 4ex;
+  flex-direction: column-reverse;
+}
+
+#bbox #cancel {
+  flex: 0 0 4ex;
+}
+
+}
+
+</style>
+
+</head>
+
+<body onload="start()">
+  <div id="selected" class="hbox"></div>
+  <hr/>
+  <div id="all" class="hbox"></div>
+</body>
+
+</html>

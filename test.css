@@ -1,0 +1,26 @@
+#selected div.chart {
+  background: orange;
+}
+
+div.chart {
+  background: hsl(0,0%,40%);
+  border: 1pt solid black;
+  min-height: 6em;
+  min-width: 10em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin: 4px 4px;
+}
+
+#selected, #all {
+  min-height: 64px;
+  width: 100%;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  margin: -4px -4px;
+}
+
+#all {
+  height: 100%;
+}
+

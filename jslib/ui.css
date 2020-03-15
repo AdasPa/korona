@@ -1,0 +1,28 @@
+* {
+ box-sizing: border-box;
+}
+
+#ui-shell {
+  width: 100%;
+  height: 100%;
+}
+
+div.spacer.hrule {
+	width: 100%;
+	height: 0px;
+	border-width: 1.2px;
+	border-style: inset;
+	border-color: darkgrey;
+}
+
+div.hbox {
+	display: flex;
+	flex-direction: row;
+}
+
+div.vbox {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
