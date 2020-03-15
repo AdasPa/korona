@@ -19,6 +19,29 @@ var data = {
  AGORA: []  
 }
 
+async function fetch_data()
+{
+  const url = 'https://cors-anywhere.herokuapp.com/http://stooq.pl/q/d/l/?s=vtl&d1=20190101&d2=20200315&i=w';
+  const res = await fetch(url);
+
+  if (!res.ok)
+  {
+    console.error('data fetch failed:', res.error);
+    return;
+  }
+
+  const txt = await res.text();
+
+ /* 
+  const rd = res.body.getReader();
+
+  for await (let chunk of rd.read())
+  {
+    console.log('got chunk');
+  }
+  */
+}
+
 
 var all;
 var selected;
