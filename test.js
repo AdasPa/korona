@@ -21,7 +21,8 @@ var data = {
 
 async function fetch_data()
 {
-  const url = 'https://cors-anywhere.herokuapp.com/http://stooq.pl/q/d/l/?s=vtl&d1=20190101&d2=20200315&i=w';
+  const cors_proxy = 'https://cors-anywhere.herokuapp.com/'; 
+  const url = cors_proxy + 'http://stooq.pl/q/d/l/?s=vtl&d1=20190101&d2=20200315&i=w';
   const res = await fetch(url);
 
   if (!res.ok)
@@ -31,15 +32,6 @@ async function fetch_data()
   }
 
   const txt = await res.text();
-
- /* 
-  const rd = res.body.getReader();
-
-  for await (let chunk of rd.read())
-  {
-    console.log('got chunk');
-  }
-  */
 }
 
 
